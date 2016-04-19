@@ -14,6 +14,7 @@ public class EventTest : MonoBehaviour {
     void Update()
     {
     	EventManager.TriggerEvent("test");
+        Controls.changeControl("Up", "L");
     }
 
     void OnEnable ()

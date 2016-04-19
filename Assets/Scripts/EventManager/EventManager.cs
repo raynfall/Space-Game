@@ -64,12 +64,17 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    public static void TriggerEvent (string eventName)
+    public static bool TriggerEvent (string eventName)
     {
         UnityEvent thisEvent = null;
         if (instance.eventDictionary.TryGetValue (eventName, out thisEvent))
         {
             thisEvent.Invoke ();
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
