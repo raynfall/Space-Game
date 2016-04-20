@@ -37,6 +37,12 @@ public class EventManager : MonoBehaviour {
         {
             eventDictionary = new Dictionary<string, UnityEvent>();
         }
+        StartListening("Introduction",TestInteraction);
+    }
+
+    void TestInteraction()
+    {
+        Debug.Log("Yay!");
     }
 
     public static void StartListening (string eventName, UnityAction listener)
